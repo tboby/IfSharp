@@ -47,6 +47,7 @@ RUN chown -R ifsharp-user /notebooks && chown -R ifsharp-user /IfSharp
 USER ifsharp-user
 
 WORKDIR /IfSharp
+RUN chmod +x ./fake.sh
 RUN ./fake.sh build --target BuildNetFramework
 RUN mono src/IfSharp/bin/Release/ifsharp.exe --install
 
